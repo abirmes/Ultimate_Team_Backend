@@ -8,3 +8,15 @@ async function CallAPI() {
 }
 
 CallAPI();
+let container = document.getElementById("container")
+function bringCards(players){
+    container.innerHTML="";
+    players.forEach(player => {
+        container.innerHTML+=`
+        <div class="col-md-6">
+
+        <div>
+        `
+    });
+
+}
