@@ -1,7 +1,7 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
 }
-.position {
+#position {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,9 +11,18 @@
     background-size: cover;
     background-position: center;
 }
+.position {
+    width: 7em;
+    height: 10em;
+    background-image: url(src/assets/img/placeholder-removebg.png);
+    background-size: cover;
+    background-position: center;
+}
+.position:hover{
+    z-index:  2;
+}
 
 .playground {
-    
     background-image: url('src/assets/img/playground.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -21,10 +30,9 @@
 .role{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
     width: 2em;
     height: 2em;
     border-radius: 50%;
     background-color: rgb(193, 192, 192);
-
 }

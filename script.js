@@ -2,20 +2,21 @@ async function CallAPI() {
     let url = "players.json";
     let fetcher = await fetch(url);
     let json = await fetcher.json();
-    let players = json.players;
+    players = json.players;
     bringCards(players);
 
 }
 
 CallAPI();
-
+let players;
 let container = document.getElementById("container")
 function bringCards(players) {
     container.innerHTML = "";
     players.forEach(player => {
         if (player.position != "GK") {
             container.innerHTML += `
-            <div class="col-md-6" style="background-image: url(src/assets/img/placeholder-removebg.png); background-repeat: no-repeat;">
+            <div class="col-md-1 "></div>
+            <div id="position" class="col-md-3" >
                 <div class="row">
                     <div class="col-md-10">
                         <img src="${player.photo}" alt="playerphoto"/>
@@ -56,7 +57,8 @@ function bringCards(players) {
         else {
             {
                 container.innerHTML += `
-                    <div class="col-md-6 " style="background-image: url(src/assets/img/placeholder-removebg.png); background-repeat: no-repeat; ">
+                    <div class="col-md-1 "></div>
+                    <div id="position" class="col-md-3 " >
                         <div class="row">
                             <div class="col-md-10">
                                 <img src="${player.photo}" alt="playerphoto"/>
@@ -66,7 +68,7 @@ function bringCards(players) {
                             </div>
                         </div>
                         <div class="row">
-                            <p><strong>${player.nom}</strong></p>
+                            <p><strong>${player.name}</strong></p>
                         </div>
                         <div class="row">
                             <div class="col-md-2">
@@ -94,7 +96,9 @@ function bringCards(players) {
                             <div class="col-md-4"></div>
                         </div>
                     <div>
+                    
                     `}
+
         }
     });
 
