@@ -15,16 +15,19 @@ function bringCards(players) {
     players.forEach(player => {
         if (player.position != "GK") {
             container.innerHTML += `
-            <div class="col-md-1 "></div>
-            <div id="position" class="col-md-3" >
-                <div class="row">
-                    <div class="col-md-10">
+           
+            <div class="col-md-4 players " >
+                <div class="row ">
+                    <div class="col-md-10 ">
                         <img src="${player.photo}" alt="playerphoto"/>
                     </div>
                     <div class="col-md-2">
-                      <p><strong>RAT</strong></br>${player.rating}</p>
+                      <p class="text-center"><strong>${player.rating}</strong></br>${player.position}</p>
                     </div>
                 </div>
+                <div class="row">
+                            <p class="text-center"><strong>${player.name}</strong></p>
+                        </div>
                 <div class="row">
                     <div class="col-md-2">
                         <p><strong>PAC</strong></br>${player.pace}</p>
@@ -47,24 +50,25 @@ function bringCards(players) {
                 </div>
                 <div class="row">
                     <div class="col-md-4 p-5">
-
+                    <img src="${player.flag}" alt="" />
                     </div>
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4"></div>
+                    
                 </div>
-            <div>
+                </div>
+
             `}
+
         else {
             {
                 container.innerHTML += `
-                    <div class="col-md-1 "></div>
-                    <div id="position" class="col-md-3 " >
+                    
+                    <div  class="col-md-4 players " >
                         <div class="row">
                             <div class="col-md-10">
                                 <img src="${player.photo}" alt="playerphoto"/>
                             </div>
                             <div class="col-md-2">
-                              <p><strong>RAT</strong></br>${player.rating}</p>
+                      <p class="text-center"><strong>${player.rating}</strong></br>${player.position}</p>
                             </div>
                         </div>
                         <div class="row">
@@ -84,16 +88,18 @@ function bringCards(players) {
                                <p><strong>REF</strong></br>${player.reflexes}</p>
                             </div>
                             <div class="col-md-2">
-                               <p><strong>SPEE</strong></br>${player.speed}</p>
+                               <p><strong>SPE</strong></br>${player.speed}</p>
                             </div>
                             <div class="col-md-2">
                                <p><strong>POS</strong></br>${player.positioning}</p>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                 <img src="${player.flag}" alt="" />
+
+                            </div>
+                            
                         </div>
                     <div>
                     
@@ -103,3 +109,19 @@ function bringCards(players) {
     });
 
 }
+document.getElementById("4-4-2").style.display = "none";
+
+
+function changePosition() {
+    if (document.getElementById("4-4-2").style.display === "none") {
+        document.getElementById("4-4-2").style.display = "block";
+        document.getElementById("4-3-3").style.display = "none";
+
+
+    }
+    else {
+        document.getElementById("4-4-2").style.display = "none";
+        document.getElementById("4-3-3").style.display = "block";
+    }
+}
+
