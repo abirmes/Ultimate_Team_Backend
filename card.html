@@ -11,24 +11,40 @@
 </head>
 
 <body>
-    <div id="container">
-        <div class="row">
-            <div class="col-md-4 card-play">
-                <div class="row player-pic">
-                    <div class="col-md-1">
-                        <p><strong>84</br>LW</strong></p>
-                    </div>
-                    <div class="col-md-11">
-                        <img src=" https://cdn.sofifa.net/players/233/049/25_120.png" alt="player pic"
-                            style="height: 2em; width: 1em;">
-                    </div>
+    <div class="player-card">
+        <div class="player-header">
+            <div class="row">
+                <div>
+                    <p class=" col-md-2 justify-content-center text-center"><strong>84</br>LW</strong></p>
                 </div>
-                <div class="row text-center">
-                    <p>Jadon Sancho</p>
+                <div>
+                    <img class="col-md-10" src=" https://cdn.sofifa.net/players/233/049/25_120.png" alt="player pic">
                 </div>
-
             </div>
+        </div>
+        <div>
+            <p class="text-center">Jadon Sancho</p>
+        </div>
 
+        <div class="stats d-flex gap-1">
+            <div>
+                <p><strong>PAC</strong></br>22</p>
+            </div>
+            <div>
+                <p><strong>SHO</strong></br>22</p>
+            </div>
+            <div>
+                <p><strong>PAS</strong></br>22</p>
+            </div>
+            <div>
+                <p><strong>DRI</strong></br>22</p>
+            </div>
+            <div>
+                <p><strong>DEF</strong></br>22</p>
+            </div>
+            <div>
+                <p><strong>PHY</strong></br>22</p>
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -39,47 +55,22 @@
 </body>
 
 </html>
-<div class="d-flex justify-content-between">
-    <div class="col-md-3 " >
-        <div class="row">
-            <div class="col-md-10 ">
-                <img src="${player.photo}" alt="playerphoto"/>
-            </div>
-            <div class="col-md-2">
-              <p><strong>RAT</strong></br>${player.rating}</p>
-            </div>
-        </div>
-        <div class="row">
-                    <p><strong>${player.name}</strong></p>
-                </div>
-        <div class="row">
-            <div class="col-md-2">
-                <p><strong>PAC</strong></br>${player.pace}</p>
-            </div>
-            <div class="col-md-2">
-               <p><strong>SHO</strong></br>${player.shooting}</p>
-            </div>
-            <div class="col-md-2">
-               <p><strong>PAS</strong></br>${player.passing}</p>
-            </div>
-            <div class="col-md-2">
-               <p><strong>DRI</strong></br>${player.dribbling}</p>
-            </div>
-            <div class="col-md-2">
-               <p><strong>DEF</strong></br>${player.defending}</p>
-            </div>
-            <div class="col-md-2">
-               <p><strong>PHY</strong></br>${player.physical}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 p-5">
 
-            </div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-        </div>
-    </div>
-</div>
-  
-    
+
+
+
+
+
+<!-- select -->
+<!-- <select class="form-select" id="validationCustom04" required>
+    <option selected disabled value="">position</option>
+    <option>GK</option>
+    <option>LB</option>
+    <option>RB</option>
+    <option>LW</option>
+    <option>RW</option>
+    <option>ST</option>
+    <option>CM</option>
+
+
+</select> -->

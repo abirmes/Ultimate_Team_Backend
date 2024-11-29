@@ -3,7 +3,12 @@
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+#body{
+    background-color: rgb(41, 44, 41);
+    background-image: url(src/assets/img/terrain.png);
+    background-repeat: no-repeat;
+    background-size: 100% ;
+}
 .position {
     width: 7em;
     height: 10em;
@@ -12,7 +17,7 @@
     background-position: center;
 }
 .position:hover{
-    z-index:  2;
+    z-index:  999;
 }
 
 .playground {
@@ -39,11 +44,6 @@
     background-position: center;
 
 } 
-.card-play p{
-    font-size: xx-small;
-
-    /* padding: ; */ 
-}
 .players{
     border-radius: 20px;
     background-color: rgb(190, 190, 190);
@@ -60,14 +60,18 @@
     overflow-y:scroll ;
     max-height: 100vh;
 }
-/* .player-pic{
+.player-card{
+    width: 7em;
+    height: 10em;
+    background-image: url(src/assets/img/goldenBadge.png);
+    background-size: auto;
     background-position: center;
-    background-size: 100% ;
-    width: 5em;
-    height: 5em;
-    background-repeat: no-repeat;
-} */
-/* .card-play img{
-    size: 1em;
+    
 
-}  */
+
+}
+#ajout{
+    background-color: rgb(183, 183, 183);
+    border-radius: 20px;
+    padding: 2em;
+}

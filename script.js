@@ -109,6 +109,9 @@ function bringCards(players) {
     });
 
 }
+function showForm(){
+    document.getElementById("ajout").style.display="block";
+}
 document.getElementById("4-4-2").style.display = "none";
 
 
@@ -124,4 +127,12 @@ function changePosition() {
         document.getElementById("4-3-3").style.display = "block";
     }
 }
+
+
+
+
+
+
+
+
 
