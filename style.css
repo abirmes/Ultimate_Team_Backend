@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#body{
+    background-color: rgb(41, 44, 41);
+    background-image: url(src/assets/img/terrain.png);
+    background-repeat: no-repeat;
+    background-size: 100% ;
+}
+.position {
+    width: 7em;
+    height: 10em;
+    background-image: url(src/assets/img/placeholder-removebg.png);
+    background-size: cover;
+    background-position: center;
+}
+.position:hover{
+    z-index:  999;
+}
+
+.playground {
+    background-image: url('src/assets/img/playground.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.role{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    width: 3em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: rgb(193, 192, 192);
+}
+#container{
+    overflow-y:scroll ;
+    
+    max-height: 100vh;
+}
+.player-card{
+    width: 7em;
+    height: 10em;
+    background-image: url(src/assets/img/goldenBadge.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.player-card p{
+    color: black;
+    position: relative;
+    font-size: 6px;
+    
+}
+.player-face{
+    position: relative;
+    width: 6em;
+}
+.name{
+    height: 13px;
+
+}
+.name p{
+    font-size: 10px;
+    font-weight: 600;
+}
+.stats{
+    height: 20px;
+}
+.rating{
+    font-size: x-small;
+}
+.flags{
+    width: 15px;
+}
+
+
+
+
+
+
+
+
+#ajout{
+    background-color: rgb(183, 183, 183);
+    border-radius: 20px;
+    padding: 2em;
+}
