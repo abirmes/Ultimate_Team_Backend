@@ -318,9 +318,9 @@
                             <option value="2" id="other">other</option>
                         </select>
                         <label for="name" class="form-label" id="Lname">name</label>
-                        <input type="text" class="form-control" required>
-                        <label for="photo" class="form-label">photo</label>
-                        <input type="file" class="form-control" aria-label="file example" required>
+                        <input type="text" class="form-control" id="Iname" required>
+                        <label for="photo" class="form-label" id="Lphoto">photo URL</label>
+                        <input type="text" class="form-control" id="Iphoto" required>
                         <label for="position" class="form-label">position</label>
                         <select class="form-select" id="positionSelect" required>
                             <option selected disabled value="">Choose position</option>
@@ -332,40 +332,28 @@
                             <option value="CM">CM</option>
                         </select>
                         <label for="nationality" class="form-label" id="Lnationality">nationality</label>
-                        <input type="text" class="form-control" id="Lnationality" required>
-                        <label for="flag" class="form-label">flag</label>
-                        <input type="file" class="form-control" aria-label="file example" required>
-                        <label for="club" class="form-label">club</label>
-                        <input type="text" class="form-control" id="Lclub" required>
-                        <label for="logo" class="form-label">logo</label>
-                        <input type="file" class="form-control" aria-label="file example" required>
-                        <label for="rating" class="form-label">rating</label>
-                        <input type="text" class="form-control" id="Lrating" required>
+                        <input type="text" class="form-control" id="Inationality" required>
+                        <label for="flag" class="form-label" id="Lflag">flag URL</label>
+                        <input type="text" class="form-control" id="Iflag" required>
+                        <label for="club" class="form-label" id="Lclub">club</label>
+                        <input type="text" class="form-control" id="Iclub" required>
+                        <label for="logo" class="form-label" id="Llogo">logo URL</label>
+                        <input type="text" class="form-control" id="Ilogo" required>
+                        <label for="rating" class="form-label" id="Lrating">rating</label>
+                        <input type="text" class="form-control" id="Irating" required>
                         <label for="pace" class="form-label" id="Lpace">pace</label>
-                        <input type="text" class="form-control" required>
+                        <input type="text" class="form-control" id="Ipace" required>
                         <label for="shooting" class="form-label" id="Lshooting">shooting</label>
-                        <input type="text" class="form-control" required>
+                        <input type="text" class="form-control" id="Ishooting" required>
                         <label for="passing" class="form-label" id="Lpassing">passing</label>
-                        <input type="text" class="form-control" required>
+                        <input type="text" class="form-control" id="Ipassing" required>
                         <label for="dribbling" class="form-label" id="Ldribbling">dribbling</label>
-                        <input type="text" class="form-control" required>
+                        <input type="text" class="form-control" id="Idribbling" required>
                         <label for="defending" class="form-label" id="Ldefending">defending</label>
-                        <input type="text" class="form-control" required>
+                        <input type="text" class="form-control" id="Idefending" required>
                         <label for="physical" class="form-label" id="Lphysical">physical</label>
-                        <input type="text" class="form-control" required>
-                        <button type="button" class="btn btn-dark text-center" onclick="submitting()">submit</button>
-
-
-
-
-
-
-
-
-
-
-
-
+                        <input type="text" class="form-control" id="Iphysical" required>
+                        <button type="button" class="btn btn-dark text-center" onclick="validation()">submit</button>
                     </section>
                 </div>
                 <div class="row gy-1 d-flex justify-content-between" id="container"></div>
