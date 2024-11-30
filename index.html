@@ -57,46 +57,7 @@
                                     <div>
                                         <a href="" id="ST"
                                             class="row position d-flex justify-content-center align-items-center text-light text-decoration-none">
-                                            <div class="player-card">
-                                                <div class="player-header">
-                                                    <div class="row">
-                                                        <div>
-                                                            <p class=" col-md-2 justify-content-center text-center">
-                                                                <strong>84</br>LW</strong>
-                                                            </p>
-                                                        </div>
-                                                        <div>
-                                                            <img class="col-md-10"
-                                                                src=" https://cdn.sofifa.net/players/233/049/25_120.png"
-                                                                alt="player pic">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <p class="text-center">Jadon Sancho</p>
-                                                </div>
-
-                                                <div class="stats d-flex gap-1">
-                                                    <div>
-                                                        <p><strong>PAC</strong></br>22</p>
-                                                    </div>
-                                                    <div>
-                                                        <p><strong>SHO</strong></br>22</p>
-                                                    </div>
-                                                    <div>
-                                                        <p><strong>PAS</strong></br>22</p>
-                                                    </div>
-                                                    <div>
-                                                        <p><strong>DRI</strong></br>22</p>
-                                                    </div>
-                                                    <div>
-                                                        <p><strong>DEF</strong></br>22</p>
-                                                    </div>
-                                                    <div>
-                                                        <p><strong>PHY</strong></br>22</p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            +
                                         </a>
                                         <div class="d-flex justify-content-center">
                                             <div class="row role">ST</div>
@@ -352,56 +313,56 @@
                     <button class="btn btn-md btn-light gy-1" onclick="showForm()">add an ultimate player</button>
                     <section id="ajout" style="display: none;">
                         <select class="form-select form-select-md mb-3 " id="GKselect" aria-label="player position">
-                            <option >choose player position</option>
+                            <option>choose player position</option>
                             <option value="1" id="GK">goal keeper</option>
                             <option value="2" id="other">other</option>
                         </select>
-                        <label for="name" class="form-label">First name</label>
-                        <input type="text" class="form-control" id="nom"  required>
+                        <label for="name" class="form-label" id="Lname">name</label>
+                        <input type="text" class="form-control" required>
                         <label for="photo" class="form-label">photo</label>
                         <input type="file" class="form-control" aria-label="file example" required>
                         <label for="position" class="form-label">position</label>
-                        <select class="form-select" id="validationDefault04" required>
+                        <select class="form-select" id="positionSelect" required>
                             <option selected disabled value="">Choose position</option>
-                            <option>LB</option>
-                            <option>RB</option>
-                            <option>LW</option>
-                            <option>RW</option>
-                            <option>ST</option>
-                            <option>CM</option>
+                            <option value="LB">LB</option>
+                            <option value="RB">RB</option>
+                            <option value="LW">LW</option>
+                            <option value="RW">RW</option>
+                            <option value="ST">ST</option>
+                            <option value="CM">CM</option>
                         </select>
-                        <label for="nationality" class="form-label">nationality</label>
-                        <input type="text" class="form-control" id="nationality"  required>
+                        <label for="nationality" class="form-label" id="Lnationality">nationality</label>
+                        <input type="text" class="form-control" id="Lnationality" required>
                         <label for="flag" class="form-label">flag</label>
                         <input type="file" class="form-control" aria-label="file example" required>
                         <label for="club" class="form-label">club</label>
-                        <input type="text" class="form-control" id="club"  required>
+                        <input type="text" class="form-control" id="Lclub" required>
                         <label for="logo" class="form-label">logo</label>
                         <input type="file" class="form-control" aria-label="file example" required>
                         <label for="rating" class="form-label">rating</label>
-                        <input type="text" class="form-control" id="pace"  required>
-                        <label for="pace" class="form-label">pace</label>
-                        <input type="text" class="form-control" id="pace"  required>
-                        <label for="shooting" class="form-label">shooting</label>
-                        <input type="text" class="form-control" id="shooting"  required>
-                        <label for="passing" class="form-label">passing</label>
-                        <input type="text" class="form-control" id="passing"  required>
-                        <label for="dribbling" class="form-label">dribbling</label>
-                        <input type="text" class="form-control" id="dribbling"  required>
-                        <label for="defending" class="form-label">defending</label>
-                        <input type="text" class="form-control" id="defending"  required>
-                        <label for="physical" class="form-label">physical</label>
-                        <input type="text" class="form-control" id="physical"  required>
+                        <input type="text" class="form-control" id="Lrating" required>
+                        <label for="pace" class="form-label" id="Lpace">pace</label>
+                        <input type="text" class="form-control" required>
+                        <label for="shooting" class="form-label" id="Lshooting">shooting</label>
+                        <input type="text" class="form-control" required>
+                        <label for="passing" class="form-label" id="Lpassing">passing</label>
+                        <input type="text" class="form-control" required>
+                        <label for="dribbling" class="form-label" id="Ldribbling">dribbling</label>
+                        <input type="text" class="form-control" required>
+                        <label for="defending" class="form-label" id="Ldefending">defending</label>
+                        <input type="text" class="form-control" required>
+                        <label for="physical" class="form-label" id="Lphysical">physical</label>
+                        <input type="text" class="form-control" required>
                         <button type="button" class="btn btn-dark text-center" onclick="submitting()">submit</button>
 
-                        
 
 
 
-                        
-                        
 
-                        
+
+
+
+
 
 
 
@@ -421,5 +382,8 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 </body>
+
+
+
 
 </html>

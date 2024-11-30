@@ -15,93 +15,105 @@ function bringCards(players) {
     players.forEach(player => {
         if (player.position != "GK") {
             container.innerHTML += `
-           
-            <div class="col-md-4 players " >
-                <div class="row ">
-                    <div class="col-md-10 ">
-                        <img src="${player.photo}" alt="playerphoto"/>
-                    </div>
-                    <div class="col-md-2">
-                      <p class="text-center"><strong>${player.rating}</strong></br>${player.position}</p>
-                    </div>
-                </div>
-                <div class="row">
-                            <p class="text-center"><strong>${player.name}</strong></p>
+                        <div class="col-md-4  ">
+    <a href="" class="row position d-flex justify-content-center align-items-center text-light text-decoration-none">
+        <div class="player-card">
+            <div class="player-header">
+                <div class="d-flex align-items-center ">
+                    <div>
+                        <div class=" rating d-flex  align-items-center text-center">
+                            <strong>${player.rating}</br>${player.position}</strong>
                         </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        <p><strong>PAC</strong></br>${player.pace}</p>
                     </div>
-                    <div class="col-md-2">
-                       <p><strong>SHO</strong></br>${player.shooting}</p>
-                    </div>
-                    <div class="col-md-2">
-                       <p><strong>PAS</strong></br>${player.passing}</p>
-                    </div>
-                    <div class="col-md-2">
-                       <p><strong>DRI</strong></br>${player.dribbling}</p>
-                    </div>
-                    <div class="col-md-2">
-                       <p><strong>DEF</strong></br>${player.defending}</p>
-                    </div>
-                    <div class="col-md-2">
-                       <p><strong>PHY</strong></br>${player.physical}</p>
+                    <div>
+                        <img class="player-face" src=" ${player.photo}" alt="player pic">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4 p-5">
-                    <img src="${player.flag}" alt="" />
-                    </div>
-                    
-                </div>
-                </div>
+            </div>
+            <div class="name">
+                <p class="  name d-flex  align-items-center justify-content-center">${player.name}</p>
+            </div>
 
+            <div class="stats d-flex gap-1">
+                <div>
+                    <p><strong>PAC</strong></br>${player.pace}</p>
+                </div>
+                <div>
+                    <p><strong>SHO</strong></br>${player.shooting}</p>
+                </div>
+                <div>
+                    <p><strong>PAS</strong></br>${player.passing}</p>
+                </div>
+                <div>
+                    <p><strong>DRI</strong></br>${player.dribbling}</p>
+                </div>
+                <div>
+                    <p><strong>DEF</strong></br>${player.defending}</p>
+                </div>
+                <div>
+                    <p><strong>PHY</strong></br>${player.physical}</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center g-2">
+                <img class="flags" src="${player.flag}" alt="flag" />
+                <img class="flags" src="${player.logo}" alt="flag" />
+            </div>
+        </div>
+    </a>
+</div>
             `}
 
         else {
             {
                 container.innerHTML += `
                     
-                    <div  class="col-md-4 players " >
-                        <div class="row">
-                            <div class="col-md-10">
-                                <img src="${player.photo}" alt="playerphoto"/>
-                            </div>
-                            <div class="col-md-2">
-                      <p class="text-center"><strong>${player.rating}</strong></br>${player.position}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <p><strong>${player.name}</strong></p>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <p><strong>DIV</strong></br>${player.diving}</p>
-                            </div>
-                            <div class="col-md-2">
-                               <p><strong>HAN</strong></br>${player.handling}</p>
-                            </div>
-                            <div class="col-md-2">
-                               <p><strong>KIC</strong></br>${player.kicking}</p>
-                            </div>
-                            <div class="col-md-2">
-                               <p><strong>REF</strong></br>${player.reflexes}</p>
-                            </div>
-                            <div class="col-md-2">
-                               <p><strong>SPE</strong></br>${player.speed}</p>
-                            </div>
-                            <div class="col-md-2">
-                               <p><strong>POS</strong></br>${player.positioning}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                 <img src="${player.flag}" alt="" />
+                    <div class="col-md-4  ">
 
-                            </div>
-                            
-                        </div>
+    <a href="" class="row position d-flex justify-content-center align-items-center text-light text-decoration-none">
+        <div class="player-card">
+            <div class="player-header">
+                <div class="d-flex align-items-center ">
                     <div>
+                        <div class=" rating d-flex  align-items-center text-center">
+                            <strong>${player.rating}</br>${player.position}</strong>
+                        </div>
+                    </div>
+                    <div>
+                        <img class="player-face" src=" ${player.photo}" alt="player pic">
+                    </div>
+                </div>
+            </div>
+            <div class="name">
+                <p class="  name d-flex  align-items-center justify-content-center">${player.name}</p>
+            </div>
+
+            <div class="stats d-flex gap-1">
+                <div>
+                    <p><strong>DIV</strong></br>${player.diving}</p>
+                </div>
+                <div>
+                    <p><strong>HAN</strong></br>${player.handling}</p>
+                </div>
+                <div>
+                    <p><strong>KIC</strong></br>${player.kicking}</p>
+                </div>
+                <div>
+                    <p><strong>REF</strong></br>${player.reflexes}</p>
+                </div>
+                <div>
+                    <p><strong>SPE</strong></br>${player.speed}</p>
+                </div>
+                <div>
+                    <p><strong>POS</strong></br>${player.positioning}</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center g-2">
+                <img class="flags" src="${player.flag}" alt="flag" />
+                <img class="flags" src="${player.logo}" alt="flag" />
+            </div>
+        </div>
+    </a>
+</div>
                     
                     `}
 
@@ -109,10 +121,12 @@ function bringCards(players) {
     });
 
 }
+// form affichage
 function showForm(){
     document.getElementById("ajout").style.display="block";
 }
-document.getElementById("4-4-2").style.display = "none";
+// position changement
+document.getElementById("4-3-3").style.display = "none";
 
 
 function changePosition() {
@@ -128,6 +142,52 @@ function changePosition() {
     }
 }
 
+
+// goal keeper conditions
+const GKselect = document.getElementById("GKselect");
+GKselect.addEventListener('change', function(e) {
+    const selectedValue = e.target.value;
+    console.log(selectedValue);
+    if(selectedValue == 1){
+        document.getElementById("positionSelect").style.display="none";
+        document.getElementById("Lpace").textContent="diving";
+        document.getElementById("Lshooting").textContent="handling";
+        document.getElementById("Lpassing").textContent="kicking";
+        document.getElementById("Ldribbling").textContent="reflexes";
+        document.getElementById("Ldefending").textContent="speed";
+        document.getElementById("Lphysical").textContent="positioning";
+    }
+
+});
+
+
+// validate and add
+const ajouter = document.getElementById("ajout");
+ajouter.addEventListener("submit" , function(e){
+    e.preventDefault();
+
+})
+function validation(){
+        const name = document.getElementById("name");
+        const position = document.getElementById("position");
+        const nationality = document.getElementById("nationality");
+
+
+
+
+}
+
+
+
+
+
+    
+// function validation(){
+
+
+//     const name = document.getElementById("name");
+
+// }
 
 
 
