@@ -1,20 +1,30 @@
-let joueurs =[];
+let players = []
+let url = "players.json";
+
+window.addEventListener('DOMContentLoaded', async () => {
+    players = JSON.parse(localStorage.getItem("players"));
+
+    if (!players) 
+    {
+        await CallAPI();
+    }
+    bringCards();
+})
+
+
 async function CallAPI() {
-    let url = "players.json";
-    let fetcher = await fetch(url);
-    let json = await fetcher.json();
-    joueurs = json.players;
-    localStorage.setItem("players", JSON.stringify(joueurs));
+    let response = await fetch(url);
+    let data = await response.json();
+    localStorage.setItem("players", JSON.stringify(data.players));
 
 }
 
-CallAPI();
-let players = JSON.parse(localStorage.getItem("players"));
-console.log(players);
+// CallAPI();
+// console.log(players);
 
 
 let container = document.getElementById("container");
-function bringCards(players) {
+function bringCards() {
     container.innerHTML = "";
     players.forEach(player => {
         if (player.position != "GK") {
@@ -123,9 +133,39 @@ function bringCards(players) {
         }
     });
 
-}
 
-bringCards(players);
+}
+document.getElementById("btn-submit").addEventListener("click", function () {
+    document.getElementById("erreur").innerHTML = "";
+    console.log(players)
+
+    if (!validation()) {
+        console.log("erreur");
+    }
+    let newPlayer = {
+        name: document.getElementById("Iname").value,
+        photo: document.getElementById("Iphoto").value,
+        position: playerPos,
+        nationality: document.getElementById("Inationality").value,
+        flag: document.getElementById("Iflag").value,
+        club: document.getElementById("Iclub").value,
+        logo: document.getElementById("Ilogo").value,
+        rating: document.getElementById("Irating").value,
+        pace: document.getElementById("Ipace").value,
+        shooting: document.getElementById("Ishooting").value,
+        passing: document.getElementById("Ipassing").value,
+        dribbling: document.getElementById("Idribbling").value,
+        defending: document.getElementById("Idefending").value,
+        physical: document.getElementById("Iphysical").value
+    }
+
+
+    players.push(newPlayer)
+
+    bringCards();
+
+})
+
 
 // form affichage
 function showForm() {
@@ -148,59 +188,57 @@ function changePosition() {
     }
 }
 
-
+let selectedValue = "";
 // goal keeper conditions
 const GKselect = document.getElementById("GKselect");
 GKselect.addEventListener('change', function (e) {
-    const selectedValue = e.target.value;
-    console.log(selectedValue);
+    selectedValue = e.target.value;
+    // console.log(selectedValue);
     if (selectedValue == 1) {
-        document.getElementById("positionSelect").style.display = "none";
+        // document.getElementById("positionSelect").style.display = "none";
 
         document.getElementById("Lpace").textContent = "diving";
-        document.getElementById("Lpace").setAttribute("id", "Ldiving");
-        document.getElementById("Ipace").setAttribute("id", "Idiving");
+        // document.getElementById("Lpace").setAttribute("id", "Ldiving");
+        // document.getElementById("Ipace").setAttribute("id", "Idiving");
 
         document.getElementById("Lshooting").textContent = "handling";
-        document.getElementById("Lshooting").setAttribute("id", "Lhandling");  
-        document.getElementById("Ishooting").setAttribute("id", "Ihandling");        
-      
+        // document.getElementById("Lshooting").setAttribute("id", "Lhandling");
+        // document.getElementById("Ishooting").setAttribute("id", "Ihandling");
+
         document.getElementById("Lpassing").textContent = "kicking";
-        document.getElementById("Lpassing").setAttribute("id", "Lkicking");  
-        document.getElementById("Ipassing").setAttribute("id", "Ikicking");        
-      
+        // document.getElementById("Lpassing").setAttribute("id", "Lkicking");
+        // document.getElementById("Ipassing").setAttribute("id", "Ikicking");
+
         document.getElementById("Ldribbling").textContent = "reflexes";
-        document.getElementById("Ldribbling").setAttribute("id", "Lreflexes");     
-        document.getElementById("Idribbling").setAttribute("id", "Ireflexes");        
-   
+        // document.getElementById("Ldribbling").setAttribute("id", "Lreflexes");
+        // document.getElementById("Idribbling").setAttribute("id", "Ireflexes");
+
         document.getElementById("Ldefending").textContent = "speed";
-        document.getElementById("Ldefending").setAttribute("id", "Lspeed");       
-        document.getElementById("Idefending").setAttribute("id", "Ispeed");        
- 
+        // document.getElementById("Ldefending").setAttribute("id", "Lspeed");
+        // document.getElementById("Idefending").setAttribute("id", "Ispeed");
+
         document.getElementById("Lphysical").textContent = "positioning";
-        document.getElementById("Lphysical").setAttribute("id", "Lpositioning");    
-        document.getElementById("Iphysical").setAttribute("id", "Ipositioning");        
-    
+        // document.getElementById("Lphysical").setAttribute("id", "Lpositioning");
+        // document.getElementById("Iphysical").setAttribute("id", "Ipositioning");
+
 
     }
 
 });
 
-
-// validate and add
-const ajouter = document.getElementById("ajout");
-ajouter.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-})
-
 let playerPos;
-const name = document.getElementById("Iname");
-const photo = document.getElementById("Iphoto");
 const pos = document.getElementById("positionSelect");
 pos.addEventListener('change', function (e) {
     playerPos = e.target.value;
 });
+
+// validate and add
+
+
+
+
+const name = document.getElementById("Iname");
+const photo = document.getElementById("Iphoto");
 const nationality = document.getElementById("Inationality");
 const flag = document.getElementById("Iflag");
 const club = document.getElementById("Iclub");
@@ -213,14 +251,80 @@ const dribbling = document.getElementById("Idribbling");
 const defending = document.getElementById("Idefending");
 const physical = document.getElementById("Iphysical");
 
-const nameRegex = "^[A-Za-z]+"
-const flagsRegex = "^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}(\/[^\s]*)+\.(jpg|jpeg|png|gif|bmp|webp|tiff|svg)$"
-const positionRegex ="^[A-Z]{2}$"
-const statsRegex = "^[0-9]{2,3}$"
+const nameRegex = /^[A-Za-z]+/;
+const flagsRegex = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}(\/[^\s]*)+\.(jpg|jpeg|png|gif|bmp|webp|tiff|svg)$/;
+const positionRegex = /^[A-Z]{2}$/;
+const statsRegex = /^[0-9]{2,3}$/;
 
 function validation() {
 
+    if (!name.value.trim().match(nameRegex)) {
+        document.getElementById("erreur").innerHTML = "name not valide";
+        return false;
+    }
+    else if (!nationality.value.trim().match(nameRegex)) {
+        document.getElementById("erreur").innerHTML = "nationality not valide";
+        return false;
+    }
+    else if (!club.value.trim().match(nameRegex)) {
+        document.getElementById("erreur").innerHTML = "club not valide";
+        return false;
+    }
+    else if (!photo.value.trim().match(flagsRegex)) {
+        document.getElementById("erreur").innerHTML = "photo not valide";
+        return false;
+    }
+    else if (!flag.value.trim().match(flagsRegex)) {
+        document.getElementById("erreur").innerHTML = "flaf not valide";
+        return false;
+    }
+    else if (!logo.value.trim().match(flagsRegex)) {
+        document.getElementById("erreur").innerHTML = "logo not valide";
+        return false;
+    }
+    // else if (!playerPos.match(positionRegex)) {
+    //     document.getElementById("erreur").innerHTML = "position not valide";
+    //     return false;
+    // }
+    else if (!rating.value.trim().match(statsRegex)) {
+        document.getElementById("erreur").innerHTML = "rating not valide";
+        return false;
+    }
+    else if (!pace.value.trim().match(statsRegex)) {
+        document.getElementById("erreur").innerHTML = "stats not valide";
+        return false;
+    }
+    else if (!shooting.value.trim().match(statsRegex)) {
+        document.getElementById("erreur").innerHTML = "stats not valide";
+        return false;
+    }
+    else if (!passing.value.trim().match(statsRegex)) {
+        document.getElementById("erreur").innerHTML = "stats not valide";
+        return false;
+    }
+    else if (!dribbling.value.trim().match(statsRegex)) {
+        document.getElementById("erreur").innerHTML = "stats not valide";
+        return false;
+    }
+    else if (!defending.value.trim().match(statsRegex)) {
+        document.getElementById("erreur").innerHTML = "stats not valide";
+        return false;
+    }
+    else if (!physical.value.trim().match(statsRegex)) {
+        document.getElementById("erreur").innerHTML = "stats not valide";
+        return false;
+    }
+    else {
+        return true;
+    }
+
+
 }
+
+
+
+
+
 
 
 
