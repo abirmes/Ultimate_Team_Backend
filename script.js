@@ -30,7 +30,7 @@ function bringCards() {
         if (player.position != "GK") {
             container.innerHTML += `
                         <div class="col-md-4  ">
-                            <div class="row playerPersonalCard d-flex justify-content-center align-items-center text-light text-decoration-none">
+                            <div placement="${player.position}" class="row playerPersonalCard d-flex justify-content-center align-items-center text-light text-decoration-none">
                                 <div class="player-card">
                                     <div class="player-header">
                                         <div class="d-flex align-items-center ">
@@ -82,7 +82,7 @@ function bringCards() {
                 container.innerHTML += `
                     
                     <div class="col-md-4  ">
-                        <div class="row playerPersonalCard d-flex justify-content-center align-items-center text-light text-decoration-none">
+                        <div placement="${player.position} class="row playerPersonalCard d-flex justify-content-center align-items-center text-light text-decoration-none">
                             <div class="player-card">
                                 <div class="player-header">
                                     <div class="d-flex align-items-center ">
@@ -338,14 +338,25 @@ const Pcards = document.getElementById("container");
 cards.addEventListener("click" , function(e){
     cardTarget=e.target.closest(".position");
     cardTarget.classList.add("drop_shadow_effect"); 
+    console.log(cardTarget.getAttribute("id"));
+    
 });
 Pcards.addEventListener("click" , function(e){
     cardPlayerTarget=e.target.closest(".playerPersonalCard");
-    console.log(cardPlayerTarget);
+    console.log(cardPlayerTarget.getAttribute("placement"));
     
-    if(cardTarget!=""){
-        cardTarget.innerHTML=cardPlayerTarget.innerHTML;
+    
+    
+    if(cardTarget!="" ){
+
+        if(cardTarget.getAttribute("id").includes(cardPlayerTarget.getAttribute("placement"))){
+            cardTarget.innerHTML=cardPlayerTarget.innerHTML;
+            cardPlayerTarget.innerHTML="";
+
+        }
     }
+
+     
 
 });
 
