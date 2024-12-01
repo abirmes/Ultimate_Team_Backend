@@ -18,6 +18,7 @@
 }
 .position:hover{
     z-index:  999;
+    cursor: pointer;
 }
 
 .playground {
@@ -77,4 +78,7 @@
     background-color: rgb(183, 183, 183);
     border-radius: 20px;
     padding: 2em;
+}
+.drop_shadow_effect {
+    filter: drop-shadow(10px 10px 10px rgb(66, 104, 66))
 }
