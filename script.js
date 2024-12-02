@@ -158,7 +158,7 @@ document.getElementById("btn-submit").addEventListener("click", function () {
         defending: document.getElementById("Idefending").value,
         physical: document.getElementById("Iphysical").value
     }
-
+    document.getElementById("ajout").style.display="none";
 
     players.push(newPlayer)
 
@@ -282,10 +282,6 @@ function validation() {
         document.getElementById("erreur").innerHTML = "logo not valide";
         return false;
     }
-    // else if (!playerPos.match(positionRegex)) {
-    //     document.getElementById("erreur").innerHTML = "position not valide";
-    //     return false;
-    // }
     else if (!rating.value.trim().match(statsRegex)) {
         document.getElementById("erreur").innerHTML = "rating not valide";
         return false;
