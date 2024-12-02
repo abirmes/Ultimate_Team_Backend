@@ -30,7 +30,7 @@ function bringCards() {
         if (player.position != "GK") {
             container.innerHTML += `
                         <div class="col-md-4  ">
-                            <a href="" class="row  d-flex justify-content-center align-items-center text-light text-decoration-none">
+                            <div placement="${player.position}" class="row playerPersonalCard d-flex justify-content-center align-items-center text-light text-decoration-none">
                                 <div class="player-card">
                                     <div class="player-header">
                                         <div class="d-flex align-items-center ">
@@ -73,7 +73,7 @@ function bringCards() {
                                         <img class="flags" src="${player.logo}" alt="flag" />
                                     </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
             `}
 
@@ -82,7 +82,7 @@ function bringCards() {
                 container.innerHTML += `
                     
                     <div class="col-md-4  ">
-                        <a href="" class="row  d-flex justify-content-center align-items-center text-light text-decoration-none">
+                        <div placement="${player.position} class="row playerPersonalCard d-flex justify-content-center align-items-center text-light text-decoration-none">
                             <div class="player-card">
                                 <div class="player-header">
                                     <div class="d-flex align-items-center ">
@@ -125,7 +125,7 @@ function bringCards() {
                                     <img class="flags" src="${player.logo}" alt="flag" />
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                     
                     `}
@@ -140,7 +140,7 @@ document.getElementById("btn-submit").addEventListener("click", function () {
     console.log(players)
 
     if (!validation()) {
-        console.log("erreur");
+        return;
     }
     let newPlayer = {
         name: document.getElementById("Iname").value,
@@ -158,7 +158,7 @@ document.getElementById("btn-submit").addEventListener("click", function () {
         defending: document.getElementById("Idefending").value,
         physical: document.getElementById("Iphysical").value
     }
-
+    document.getElementById("ajout").style.display="none";
 
     players.push(newPlayer)
 
@@ -275,17 +275,13 @@ function validation() {
         return false;
     }
     else if (!flag.value.trim().match(flagsRegex)) {
-        document.getElementById("erreur").innerHTML = "flaf not valide";
+        document.getElementById("erreur").innerHTML = "flag not valide";
         return false;
     }
     else if (!logo.value.trim().match(flagsRegex)) {
         document.getElementById("erreur").innerHTML = "logo not valide";
         return false;
     }
-    // else if (!playerPos.match(positionRegex)) {
-    //     document.getElementById("erreur").innerHTML = "position not valide";
-    //     return false;
-    // }
     else if (!rating.value.trim().match(statsRegex)) {
         document.getElementById("erreur").innerHTML = "rating not valide";
         return false;
@@ -326,41 +322,44 @@ function validation() {
 
 
 
+// positionnement du joueuers dans le terrain 
+function fullingCard(){
+    console.log("erreur");
+    
+}
+let cardTarget="";
+let cardPlayerTarget="";
+const cards = document.getElementById("4-4-2");
+const Pcards = document.getElementById("container");
+// console.log(cards);
+cards.addEventListener("click" , function(e){
+    cardTarget=e.target.closest(".position");
+    cardTarget.classList.add("drop_shadow_effect"); 
+    console.log(cardTarget.getAttribute("id"));
+    
+});
+Pcards.addEventListener("click" , function(e){
+    cardPlayerTarget=e.target.closest(".playerPersonalCard");
+    console.log(cardPlayerTarget.getAttribute("placement"));
+    
+    
+    
+    if(cardTarget!="" ){
 
+        if(cardTarget.getAttribute("id").includes(cardPlayerTarget.getAttribute("placement"))){
+        
+            cardTarget.innerHTML=cardPlayerTarget.innerHTML;
+            cardPlayerTarget.innerHTML="";
+            cardTarget.classList.remove("drop_shadow_effect"); 
+            cardTarget.classList.remove("position");
 
+        }
+    }
+    
 
+     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function validation(){
-
-
-//     const name = document.getElementById("name");
-
-// }
-
-
+});
 
 
 
