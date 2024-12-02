@@ -275,7 +275,7 @@ function validation() {
         return false;
     }
     else if (!flag.value.trim().match(flagsRegex)) {
-        document.getElementById("erreur").innerHTML = "flaf not valide";
+        document.getElementById("erreur").innerHTML = "flag not valide";
         return false;
     }
     else if (!logo.value.trim().match(flagsRegex)) {
@@ -325,6 +325,7 @@ function validation() {
 
 
 
+
 // positionnement du joueuers dans le terrain 
 function fullingCard(){
     console.log("erreur");
@@ -350,11 +351,15 @@ Pcards.addEventListener("click" , function(e){
     if(cardTarget!="" ){
 
         if(cardTarget.getAttribute("id").includes(cardPlayerTarget.getAttribute("placement"))){
+        
             cardTarget.innerHTML=cardPlayerTarget.innerHTML;
             cardPlayerTarget.innerHTML="";
+            cardTarget.classList.remove("drop_shadow_effect"); 
+            cardTarget.classList.remove("position");
 
         }
     }
+    
 
      
 
