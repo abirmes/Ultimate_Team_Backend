@@ -11,7 +11,9 @@
 </head>
 
 <body style="background-color: #f1f1f1;">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<?php include 'conn.php'; ?>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">ULTIMATE</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -58,7 +60,7 @@
                                         <div id="STF-1"
                                             class="row position d-flex justify-content-center align-items-center text-light text-decoration-none">
                                             +
-                                    </div>
+                                        </div>
                                         <div class="d-flex justify-content-center">
                                             <div class="row role">ST</div>
                                         </div>
@@ -67,7 +69,7 @@
                                         <div id="STF-2"
                                             class="row position d-flex justify-content-center align-items-center text-light text-decoration-none">
                                             +
-                                    </div>
+                                        </div>
                                         <div class="d-flex justify-content-center">
                                             <div class="row role">ST</div>
                                         </div>
@@ -82,7 +84,7 @@
                                         <div id="LWF"
                                             class="row position d-flex justify-content-center align-items-center text-light text-decoration-none">
                                             +
-                                    </div>
+                                        </div>
                                         <div class="d-flex justify-content-center">
                                             <div class="row role">LW</div>
                                         </div>
@@ -91,7 +93,7 @@
                                         <div id="CMF-1"
                                             class="row position d-flex justify-content-center align-items-center text-light text-decoration-none">
                                             +
-                                    </div>
+                                        </div>
                                         <div class="d-flex justify-content-center">
                                             <div class="row role">CM</div>
                                         </div>
@@ -100,7 +102,7 @@
                                         <div id="CMF-2"
                                             class="row position d-flex justify-content-center align-items-center text-light text-decoration-none">
                                             +
-                                    </div>
+                                        </div>
                                         <div class="d-flex justify-content-center">
                                             <div class="row role">CM</div>
                                         </div>
