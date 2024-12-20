@@ -17,7 +17,7 @@
     </section>
     <section class="row">
         <div class="col-md-2"></div>
-        <div class="col-md-2">
+        <div class="col-md-8">
             <form action="add.php" method="post">
                 <label for="name" class="form-label" id="Lname">name</label>
                 <input type="text" class="form-control" name="name" >

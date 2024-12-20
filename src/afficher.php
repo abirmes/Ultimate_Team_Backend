@@ -52,8 +52,8 @@
                             <td><?php echo $row['dribbling'] ?></td>
                             <td><?php echo $row['defending'] ?></td>
                             <td><?php echo $row['physical'] ?></td>
-                            <td><a class="btn btn-primary " name="" href='update.php?id=<?php echo $row['id'] ?>'>Modifier</a></td>
-                            <td><a class="btn btn-danger" href='index.php?delete=<?php echo $row['id'] ?>'>Supprimer</a></td>
+                            <td><a class="btn btn-primary "  href='update.php?id=<?php echo $row['id'] ?>'>Modifier</a></td>
+                            <td><a class="btn btn-danger"href='delete.php?id=<?php echo $row['id'] ?>'>Supprimer</a></td>
 
                         </tr>
                     <?php
