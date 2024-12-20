@@ -35,17 +35,36 @@
                 <tbody>
                     <?php
                     require_once 'conn.php';
-                    $sql = " SELECT * FROM Players;";
-                    if(mysqli_query($conn , $sql)){
-                        
+                    $sql = " SELECT Players.id, Players.name as name, Players.photo , Players.position_player, Players.rating, Nationalities.name as nationality , Clubs.name as club, Detail_players.pace , Detail_players.shooting , Detail_players.passing , Detail_players.dribbling , Detail_players.defending , Detail_players.physical FROM `Players` INNER JOIN Nationalities ON Players.id_nationality = Nationalities.id INNER JOIN Clubs ON Players.id_club = Clubs.id INNER JOIN Detail_players ON Players.id_detail_player = Detail_players.id;";
+                    $resultat = mysqli_query($conn, $sql);
+                    while ($row = mysqli_fetch_assoc($resultat)) { ?>
+                        <tr>
+                            <td><?php echo $row['id'] ?></td>
+                            <td><?php echo $row['name'] ?></td>
+                            <td><img src=<?php echo $row['photo'] ?> style="width: 20px"></td>
+                            <td><?php echo $row['position_player'] ?></td>
+                            <td><?php echo $row['rating'] ?></td>
+                            <td><?php echo $row['name'] ?></td>
+                            <td><?php echo $row['nationality'] ?></td>
+                            <td><?php echo $row['club'] ?></td>
+                            <td><?php echo $row['shooting'] ?></td>
+                            <td><?php echo $row['passing'] ?></td>
+                            <td><?php echo $row['dribbling'] ?></td>
+                            <td><?php echo $row['defending'] ?></td>
+                            <td><?php echo $row['physical'] ?></td>
+                            <td><a class="btn btn-primary " name="" href='update.php?id=<?php echo $row['id'] ?>'>Modifier</a></td>
+                            <td><a class="btn btn-danger" href='index.php?delete=<?php echo $row['id'] ?>'>Supprimer</a></td>
+
+                        </tr>
+                    <?php
                     }
                     ?>
-                    <tr>
+                    <!-- <tr>
                         <th scope="row">1</th>
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>

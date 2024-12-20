@@ -92,7 +92,7 @@
              && mysqli_query($conn, $sqlN) &&
             mysqli_query($conn, $sqlC) && mysqli_query($conn, $sqlDP)
         ) {
-            header("location : afficher.php");
+            echo "player ajoutée avec succee";
         }
     }
 
