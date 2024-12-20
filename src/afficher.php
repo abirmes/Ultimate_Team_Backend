@@ -44,9 +44,9 @@
                             <td><img src=<?php echo $row['photo'] ?> style="width: 20px"></td>
                             <td><?php echo $row['position_player'] ?></td>
                             <td><?php echo $row['rating'] ?></td>
-                            <td><?php echo $row['name'] ?></td>
                             <td><?php echo $row['nationality'] ?></td>
                             <td><?php echo $row['club'] ?></td>
+                            <td><?php echo $row['pace'] ?></td>
                             <td><?php echo $row['shooting'] ?></td>
                             <td><?php echo $row['passing'] ?></td>
                             <td><?php echo $row['dribbling'] ?></td>
