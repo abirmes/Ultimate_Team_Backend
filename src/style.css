@@ -5,14 +5,14 @@
 }
 #body{
     background-color: rgb(41, 44, 41);
-    background-image: url(src/assets/img/terrain.png);
+    background-image: url(./assets/img/terrain.png);
     background-repeat: no-repeat;
     background-size: 100% ;
 }
 .position {
     width: 7em;
     height: 10em;
-    background-image: url(src/assets/img/placeholder-removebg.png);
+    background-image: url(./assets/img/placeholder-removebg.png);
     background-size: cover;
     background-position: center;
 }
@@ -22,7 +22,7 @@
 }
 
 .playground {
-    background-image: url('src/assets/img/playground.png');
+    background-image: url(./assets/img/playground.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -42,7 +42,7 @@
 .player-card{
     width: 7em;
     height: 10em;
-    background-image: url(src/assets/img/goldenBadge.png);
+    background-image: url(./assets/img/goldenBadge.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

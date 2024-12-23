@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:latest # Correct database image
+    container_name: myContainerOfSqlFUTBackend
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=FUTBackend
+      - MYSQL_USER=myuser
+      - MYSQL_PASSWORD=mypassword
+    
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+   
+
+  www:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - "./src:/var/www/html"
+    ports:
+      - "8080:80"
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadminFUTBackend
+    environment:
+      PMA_HOST: db # Connects phpMyAdmin to the 'db' service
+      PMA_USER: root
+      PMA_PASSWORD: rootpassword
+    ports:
+      - "8081:80" # Maps port 8081 on the host to port 80 in the phpMyAdmin container
+    depends_on:
+      - db
+
+volumes:
+  db-data:
