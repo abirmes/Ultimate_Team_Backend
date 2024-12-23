@@ -56,7 +56,10 @@
                     <input type="number" class="form-control" name="defending" >
                     <label for="physical" class="form-label">physical</label>
                     <input type="number" class="form-control" name="physical" >
-                    <input type="submit" value="add" name="submit">
+                    <div class="d-flex justify-content-end">
+                        <input class="btn btn-md btn-primary m-2" type="submit" value="add" name="submit">
+                        <a class="btn btn-md btn-primary m-2" href="afficher.php" >Go to dashboard</a>
+                    </div>
             </form>
         </div>
         <div class="col-md-2"></div>
